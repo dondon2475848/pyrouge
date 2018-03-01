@@ -333,7 +333,8 @@ class Rouge155(object):
         """
         self.write_config(system_id=system_id)
         options = self.__get_options(rouge_args)
-        command = [self._bin_path] + options
+        # command = [self._bin_path] + options
+        command = ['perl'] + [self._bin_path] + options
         self.log.info(
             "Running ROUGE with command {}".format(" ".join(command)))
         rouge_output = check_output(command).decode("UTF-8")
